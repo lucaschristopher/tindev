@@ -25,7 +25,7 @@ module.exports = {
     const userRegistered = await Developer.findOne({ user: username });
 
     if (userRegistered) {
-      return res.status(400).json({ error: "User already exists!" });
+      return res.json(userRegistered);
     }
 
     const response = await axios.get(
